@@ -11,17 +11,17 @@ export default function GenresPage({
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Жанри</h1>
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Жанри</h1>
 
       {genres.map((genre) => {
         const genreBooks = books.filter((b) => b.genre === genre);
         return (
           <section key={genre} className="mb-12">
             <div className="flex items-center justify-between mb-5">
-              <h2 className="text-xl font-semibold text-gray-800">{genre}</h2>
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{genre}</h2>
               <Link
                 href={`/catalog?genre=${encodeURIComponent(genre)}`}
-                className="text-sm text-indigo-600 hover:text-indigo-800"
+                className="text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300"
               >
                 Всі книги жанру →
               </Link>

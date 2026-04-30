@@ -28,8 +28,8 @@ export default function HomePage() {
       {/* Featured Books */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">Нові надходження</h2>
-          <Link href="/catalog" className="text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Нові надходження</h2>
+          <Link href="/catalog" className="text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium">
             Всі книги →
           </Link>
         </div>
@@ -41,15 +41,15 @@ export default function HomePage() {
       </section>
 
       {/* Genres */}
-      <section className="bg-white py-14">
+      <section className="bg-white dark:bg-gray-800 py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Жанри</h2>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Жанри</h2>
           <div className="flex flex-wrap gap-3">
             {genres.map((genre) => (
               <Link
                 key={genre}
                 href={`/genres?genre=${encodeURIComponent(genre)}`}
-                className="px-5 py-2.5 bg-indigo-50 text-indigo-700 rounded-xl font-medium hover:bg-indigo-100 transition-colors"
+                className="px-5 py-2.5 bg-indigo-50 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-xl font-medium hover:bg-indigo-100 dark:hover:bg-indigo-800 transition-colors"
               >
                 {genre}
               </Link>
