@@ -29,7 +29,7 @@ export default function CatalogPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Каталог книг</h1>
+      <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Каталог книг</h1>
 
       {/* Search + Filters */}
       <div className="flex flex-col md:flex-row gap-4 mb-8">
@@ -38,12 +38,12 @@ export default function CatalogPage() {
           placeholder="Пошук за назвою, автором або тегом..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 border border-gray-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="flex-1 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
         />
         <select
           value={selectedGenre}
           onChange={(e) => setSelectedGenre(e.target.value)}
-          className="border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
         >
           <option value="">Усі жанри</option>
           {genres.map((g) => (
@@ -53,7 +53,7 @@ export default function CatalogPage() {
         <select
           value={selectedLanguage}
           onChange={(e) => setSelectedLanguage(e.target.value)}
-          className="border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
         >
           <option value="">Усі мови</option>
           {languages.map((l) => (
@@ -63,7 +63,7 @@ export default function CatalogPage() {
         <select
           value={selectedAvailability}
           onChange={(e) => setSelectedAvailability(e.target.value)}
-          className="border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          className="border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
         >
           <option value="">Усі формати</option>
           {allAvailability.map((a) => (
@@ -74,10 +74,10 @@ export default function CatalogPage() {
 
       {/* Results */}
       {filtered.length === 0 ? (
-        <p className="text-gray-500 text-center py-20">Нічого не знайдено. Спробуйте інші фільтри.</p>
+        <p className="text-gray-500 dark:text-gray-400 text-center py-20">Нічого не знайдено. Спробуйте інші фільтри.</p>
       ) : (
         <>
-          <p className="text-sm text-gray-500 mb-6">Знайдено: {filtered.length} книг</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">Знайдено: {filtered.length} книг</p>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filtered.map((book) => (
               <BookCard key={book.id} book={book} />
